@@ -3,12 +3,21 @@ var mqtt = require('mqtt')
 var express = require('express')
 app = express()
 p  = args.p
+g = args.g
+
 if(!p){
-    console.log('mmkv -p [port]')
+    console.log('mmkv -p [port] -g [uuid group]')
     return
 }
+
+if(!g || g.length<32){
+    console.log('mmkv -p [port] -g [uuid group]')
+    return
+}
+
+
 var client  = mqtt.connect('mqtt://am.appxc.com')
-var topic = 'mmkv'
+var topic = 'mmkv'+g
 
 
 client.on('connect', function () {
