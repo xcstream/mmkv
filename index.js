@@ -49,4 +49,4 @@ app.use('/get',function (req, res) {
 
 app.listen(p)
 
-console.log('[nodekv] listen localhost:'+p)
+console.log('[mmkv] listen localhost:'+p)
