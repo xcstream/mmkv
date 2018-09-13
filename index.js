@@ -42,17 +42,18 @@ app.use('/set',function (req, res) {
     if(key){
         storage[key] = value
         client.publish(topic, JSON.stringify({key:key,value:value}))
-        res.end('ok')
+        res.send({success:true,key:key,value:value})
     }
-    res.end('!!!err')
+    res.send({success:false})
 })
 
 app.use('/get',function (req, res) {
     var key = req.query.key
     if(key){
-        res.end(storage[key])
+        var value = storage[key]
+        res.send({success:true,key:key,value:value})
     }
-    res.end('!!!err')
+    res.send({success:false})
 })
 
 
