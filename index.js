@@ -4,11 +4,11 @@ var express = require('express')
 app = express()
 p  = args.p
 if(!p){
-    console.log('nodekv -p [port]')
+    console.log('mmkv -p [port]')
     return
 }
 var client  = mqtt.connect('mqtt://am.appxc.com')
-var topic = 'nodekv'
+var topic = 'mmkv'
 
 
 client.on('connect', function () {

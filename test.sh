@@ -1,9 +1,9 @@
 #! /usr/bin/env sh
 
-nodekv -p 3001 &
-nodekv -p 3002 &
-nodekv -p 3003 &
-nodekv -p 3004 &
+mmkv -p 3001 &
+mmkv -p 3002 &
+mmkv -p 3003 &
+mmkv -p 3004 &
 
 sleep 2
 curl 'http://localhost:3003/set?key=1&value=ok1234'
